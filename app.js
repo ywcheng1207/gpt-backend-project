@@ -3,7 +3,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const routes = require('./routes')
 require('dotenv').config()
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 8080
 
 //
 require('./config/mongoose')
