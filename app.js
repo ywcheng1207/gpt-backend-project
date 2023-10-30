@@ -2,6 +2,8 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const routes = require('./routes')
+require('dotenv').config()
+const PORT = process.env.PORT
 
 //
 require('./config/mongoose')
@@ -13,6 +15,6 @@ app.use(bodyParser.json())
 app.use(routes)
 
 // listen
-app.listen(3000, () => {
-  console.log('App is running on http://localhost:3000')
+app.listen(PORT, () => {
+  console.log('Server is running on PORT: ' + PORT)
 })
