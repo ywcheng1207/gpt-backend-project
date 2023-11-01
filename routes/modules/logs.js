@@ -48,7 +48,7 @@ router.get('/:id', (req, res) => {
 
   ChatLog.find({ userEmail: email, chatId: id })
     .lean()
-    .sort({ _id: -1 })
+    .sort({ _id: 1 })
     .then((data) => res.send(data))
     .catch((error) => console.log(error))
 })
