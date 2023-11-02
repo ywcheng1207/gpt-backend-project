@@ -15,7 +15,7 @@ router.post('/login', (req, res) => {
       return res.status(401).send({ error: '用戶不存在' })
     }
     if (!(await bcrypt.compare(password, user.password))) {
-      return res.status(401).send({ error: '登入錯誤' })
+      return res.status(401).send({ error: '密碼錯誤' })
     }
 
     const token = jwt.sign(

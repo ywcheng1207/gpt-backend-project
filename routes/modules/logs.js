@@ -73,7 +73,7 @@ router.delete('/', (req, res) => {
     .then(() => res.send('刪除成功'))
     .catch((error) => {
       console.error(error)
-      res.status(500).send('Failed to clear chat logs')
+      res.status(500).send('刪除失敗')
     })
 })
 
