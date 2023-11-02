@@ -20,7 +20,7 @@ router.get('/chat-list', (req, res) => {
 
   ChatLog.find({ userEmail: email })
     .lean()
-    .sort({ _id: -1 })
+    .sort({ _id: 1 })
     .then((data) => {
       const chatIdGroups = {}
       data.forEach((entry) => {
@@ -35,7 +35,7 @@ router.get('/chat-list', (req, res) => {
           message: group[0].message
         }
       })
-      res.status(200).send(result)
+      res.status(200).send(result.reverse())
     })
     .catch((error) => console.log(error))
 })
