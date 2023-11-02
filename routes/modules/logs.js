@@ -64,4 +64,17 @@ router.delete('/:id', (req, res) => {
     .catch((error) => console.log(error))
 })
 
+// 清空該位使用者的所有chatlog
+router.delete('/', (req, res) => {
+  const Token = req.headers.authorization
+  const { email } = jwtDecode(Token)
+
+  ChatLog.deleteMany({ userEmail: email })
+    .then(() => res.send('刪除成功'))
+    .catch((error) => {
+      console.error(error)
+      res.status(500).send('Failed to clear chat logs')
+    })
+})
+
 module.exports = router
