@@ -26,7 +26,7 @@ To use this API, besides cloning the code, you will also need to prepare your Mo
     - PORT
     - MONGODB_URI
     - KEY
-    -OPENAI_API_KEY
+    - OPENAI_API_KEY
 
     explanation: </br>
     The URI is the connection string mentioned earlier, and the KEY is a string required for the JWT token (you can choose any text for this, just input something for now). Additionally, you will need an OpenAI API KEY.
