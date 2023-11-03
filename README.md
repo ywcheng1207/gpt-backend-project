@@ -1,18 +1,17 @@
 ## ✨ ChatPT Clone  API
----
+
 ## ✨ v1.0.0
----
+
 ## ✨ About The Project
 A RESTful API allows users to interact with the OpenAI API This API is built with Node.js, Express framework, and MongoDB.
 
----
+
 ## 👋 Welcome
 
 This project is a "Simplified ChatPT," with separate repositories for the frontend and backend. You can view the frontend repository at [HERE](https://github.com/ywcheng1207/gpt-frontend-project). 
 
 To use this API, besides cloning the code, you will also need to prepare your MongoDB account and have the connection string ready.
 
----
 ## ✨ Here are the steps to use this project
 1. Clone the code 
     ```
@@ -36,8 +35,6 @@ To use this API, besides cloning the code, you will also need to prepare your Mo
     ```
     npm run dev
     ```
-
----
 
 ## ✨ Tools 
     "cors": "^2.8.5",
