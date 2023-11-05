@@ -23,8 +23,14 @@ router.post('/completions', async (req, res) => {
       model: 'gpt-3.5-turbo',
       max_tokens: 100
     })
-    res.status(200).send({ message: 'chat !', completion })
+    if (
+      !completion.choices[0].message.content ||
+      completion.choices[0].message.content.trim().length === 0
+    ) {
+      return res.status(400).send({ error: 'OpenAI return nothing' })
+    }
 
+    res.status(200).send({ message: 'chat !', completion })
     // 新增user發送的訊息
     ChatLog.create({
       userEmail: email,
